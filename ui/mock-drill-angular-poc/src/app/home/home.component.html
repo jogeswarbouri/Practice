@@ -1,0 +1,52 @@
+<div class="jumbotron text-center">
+<h1>{{pageTitle}} Home Page</h1>
+</div>
+
+<div class="container">
+<div class="btn-group btn-group-justified" *ngIf="Role =='Admin'">
+    <div class="btn-group">
+     <button type="button" class="btn btn-primary">Add</button>
+    </div>
+    <div class="btn-group">
+     <button type="button" class="btn btn-primary">Delete</button>
+    </div>
+     <div class="btn-group">
+     <button type="button" class="btn btn-primary">Update</button>
+     </div>
+      <div class="btn-group">
+     <button type="button" class="btn btn-primary">Edit</button>
+      </div>
+</div>
+
+
+ <div class="btn-group btn-group-justified" *ngIf="Role =='UW'" >
+     <div class="btn-group"> 
+    <button type="button" class="btn btn-primary">View</button>
+     </div>
+     <div class="btn-group">
+    <button type="button" class="btn btn-primary">Update View</button>
+  </div>  
+
+ </div>
+
+<div class="btn-group btn-group-justified" *ngIf="Role =='QC'" > 
+     <div class="btn-group"> 
+     <button type="button" class="btn btn-primary">EditQA</button>
+     </div>
+     <div class="btn-group">
+     <button type="button" class="btn btn-primary">UpdateQa</button>
+     </div>
+</div>
+<br>
+<div>
+<button type="button" class="btn btn-primary btn-lg" (click)="logout()" >Logout</button>
+
+</div>
+
+</div>
+
+
+
+
+
+

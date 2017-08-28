@@ -1,0 +1,76 @@
+
+<div>
+<h1>Login Page</h1>
+</div>
+
+<div *ngIf = "errormsg != ''">
+    <h3><mark> {{errormsg}} </mark> </h3>
+
+</div> 
+<div *ngIf = "roleerrormsg != ''">
+    <h3><mark> {{roleerrormsg}} </mark></h3>
+
+</div> 
+
+
+
+
+<div class='container'>
+        <form class='form-horizontal' 
+                (ngSubmit)="submit()" [formGroup]='LoginForm'>
+            <fieldset>
+               
+               <div *ngFor="let formElement of formElements">
+                
+                      <div *ngIf="formElement.type=='text'">
+                        <div class="form-group" [ngClass]="">
+                     <label class='col-md-2 control-label' align="left"> {{formElement.label}} </label> 
+                      <div class='col-md-6'>  
+                    <input class="form-control" type="text" required [formControlName]="formElement.name" > 
+                      </div>
+                        </div>
+
+                    </div>
+
+                    <div *ngIf="formElement.type=='password'">
+                        <div class="form-group" [ngClass]="">
+                     <label class='col-md-2 control-label' align="left"> {{formElement.label}} </label> 
+                      <div class='col-md-6'>  
+                    <input class="form-control" type="password" required [formControlName]="formElement.name" > 
+                      </div>
+                        </div>
+
+                    </div>
+
+
+                  
+                
+                        <div *ngIf="formElement.type=='select'">
+                       <div class="form-group" [ngClass]="">
+                            <label class='col-md-2 control-label'>{{formElement.label}}</label> 
+                            <div class='col-md-2'>
+                                <select [formControlName]="formElement.name" required>
+                                    <option *ngFor="let option of formElement.options" value="{{option}}">{{option}} </option>
+
+                                </select>
+                            </div>  
+                       </div>
+                    </div> 
+
+               </div>
+               <br>
+
+              <span>
+                    <button class="btn btn-info btn-lg" type="submit"  [disabled]="false">Submit</button>
+                    <span>
+                    <button class="btn btn-info btn-lg" type="reset" (onClick)="reset(LoginForm)" [disabled]="false">Reset</button>
+                </span>
+                </span>   
+
+               
+            </fieldset>
+
+            </form>
+
+</div>
+

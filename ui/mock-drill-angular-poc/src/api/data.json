@@ -1,0 +1,22 @@
+[
+        {
+            "type": "text",
+            "name": "username",
+            "label": "User Name",
+            "show": "true"            
+        },
+         {
+            "type": "password",
+            "name": "password",
+            "label": "Password",
+            "show": "true"            
+        },
+        {
+            "type":"select", 
+            "name":"role", 
+            "label":"Role",
+            "show": "true",
+            "value": "Missing",
+            "options": ["Select Role","Admin","UW", "QC"]           
+        }
+]
